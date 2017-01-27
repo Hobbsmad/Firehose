@@ -9,8 +9,9 @@
   </head>
 
   <body>
-    <header>
+    <header class="row">
       <div class="col-3">
+        <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
           You know
@@ -19,22 +20,37 @@
           <br />
           to code
         </div>
+        <% end %>
+
       <div class="col-4 slogan">
         Splurting out unsolicited advice about entrepreneurship since 2016
       </div>
       <div class="col-5 links">
-        <%= link_to 'Contribute', '#' %>
+        <%= link_to 'Contribute', new_quote_path %>
         <%= link_to 'About', '#' %>
       </div>
     </header>
 
     <hr />
-
     <br class="clear" />
 
-
+    <div class="container">
     <%= yield %>
+  </div>
 
+
+<div class="footer">
+  <div class="container">
+    <div class="col-6">
+      <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
+    </div>
+    <div class="col-6 footer-blurb">
+      Proudly hacked in Urbandale, IA by <a href="http://Madelyn.Hobbs@gmail.com">Madelyn Hobbs</a><br />
+      Want to build your own Splurty Web App - <a href="http://Madelyn.Hobbs@gmail.com">Learn how to code here</a>
+    </div>
+    <p class="text-muted">Place sticky footer content here.</p>
+  </div>
+</div>
 
   </body>
 </html>
